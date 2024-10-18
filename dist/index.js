@@ -30464,13 +30464,13 @@ async function fetchAndFilterEvents() {
             })
             .slice(0, eventLimit);
 
-        if (filteredEvents.length < eventLimit) {
-            const additionalEvents = await fetchAllEvents();
-            if(additiopnalEvents.length === 0) break;
-            allEvents = additionalEvents.concat(allEvents);
-        } else {
-            break;
-        }
+        // if (filteredEvents.length < eventLimit) {
+        //     const additionalEvents = await fetchAllEvents();
+        //     if(additiopnalEvents.length === 0) break;
+        //     allEvents = additionalEvents.concat(allEvents);
+        // } else {
+        //     break;
+        // }
     }
 
     filteredEvents = filteredEvents.slice(0, eventLimit);
