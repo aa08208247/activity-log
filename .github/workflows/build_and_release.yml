@@ -57,6 +57,7 @@ jobs:
           body: ${{ inputs.note }}
           draft: false
           prerelease: false
+          
   test:
     runs-on: ubuntu-latest
     needs: build
