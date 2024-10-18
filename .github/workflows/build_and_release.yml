@@ -57,3 +57,21 @@ jobs:
           body: ${{ inputs.note }}
           draft: false
           prerelease: false
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test index.js
+        env:
+          INPUT_GITHUB_USERNAME: "aa08208247"
+          INPUT_GITHUB_TOKEN: ${{ secrets.TOKEN2024 }}
+          INPUT_TARGET_REPOS: '[aa08208247/activity-log]'
+          INPUT_OUTPUT_STYLE: MARKDOWN
+          INPUT_IGNORE_EVENTS: '[]'
+          INPUT_README_PATH: README.md
+          INPUT_COMMIT_MESSAGE: Update README.md
+          INPUT_EVENT_LIMIT: '100'
+        run: node ./dist/index.js
