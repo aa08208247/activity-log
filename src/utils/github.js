@@ -11,7 +11,7 @@ async function fetchAllStarredRepos() {
     let starredRepos = [];
     let page = 1;
 
-    while (true) {
+    while (true) { 
         try {
             const { data: pageStarredRepos } = await octokit.rest.activity.listReposStarredByAuthenticatedUser({
                 per_page: 100,
